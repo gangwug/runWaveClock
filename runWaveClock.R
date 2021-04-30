@@ -28,9 +28,9 @@ colnames(data) = header_name[-(1:2)]
 ##get the time points and transfer to the day unit
 timepoints = dataD[,1]
 timepoints = lapply(timepoints, function(z) {
-												zv = as.numeric(unlist(strsplit(z, ":")))
-												zout = (zv[1] + zv[2]/60 + zv[3]/3600)/24
-												return(round(zout, 4))
+						zv = as.numeric(unlist(strsplit(z, ":")))
+						zout = (zv[1] + zv[2]/60 + zv[3]/3600)/24
+						return(round(zout, 4))
                                              })
 rownames(data) = timepoints
 data = as.data.frame(data)
